@@ -18,5 +18,12 @@ class Categories extends CI_Controller
 		$this->load->helper('url');
 		redirect('categories');
 	}
+	public function delete()
+	{		
+		$ThisCatId = $_GET["id"];
+		$this->category_model->deleteCategory($ThisCatId);				
+		$this->load->helper('url');
+		redirect('categories');
+	}
 }
 ?>

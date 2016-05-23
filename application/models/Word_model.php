@@ -10,7 +10,7 @@ class Word_model extends CI_Model
 	{
 		$query = $this->db->get_where('word', array('categoryId' => $id));
 		return $query->result_array();
-	}
+	}	
 	public function createWord($wordText, $id)
 	{
 		$data = array(
@@ -22,10 +22,8 @@ class Word_model extends CI_Model
 	}
 	public function deleteWord($id)
 	{
-		$data = array(			
-			'id' => $id
-		);
-		$this->db->delete('word', $data);
+		$this->db->where('id', $id);
+		$this->db->delete('word');
 	}
 }
 ?>

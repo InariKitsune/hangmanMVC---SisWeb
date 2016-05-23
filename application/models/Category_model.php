@@ -19,5 +19,10 @@ class Category_model extends CI_Model
 		$this->db->insert('category', $data);
 		return $this->db->insert_id();
 	}
+	public function deleteCategory($id)
+	{
+		$this->db->where('id', $id);
+		$this->db->delete('category');
+	}
 }
 ?>

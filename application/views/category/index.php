@@ -9,7 +9,7 @@
 	<ul>
 		<?php		
 		foreach ($words as $word): ?>
-		<li><?= $word["text"] ?></a></li>
+		<li><?= $word["text"] ?>[<a href="/category/delete?id=<?= $word["id"]?>" onclick="return confirm('¿Está seguro que desea eliminar esta palabra?');">X</a>]</li>
 		<?php endforeach; ?>	  
 		<form method="POST" action="/category/create?id=<?php echo $cID; ?>">
 		  <input type="text" name="newWordTextBox" maxlength="50" />
